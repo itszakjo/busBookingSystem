@@ -24,6 +24,10 @@ SO basically , we set up stations , and we set up routes by choosing each route 
  
  TO TEST THIS APP 
  
+ Choose Cairo as from & Asyut as to then click Find 
+ 
+ if you would like to test from scratch
+ 
  - Add stations
  - Add Routes
  - Add Trips 

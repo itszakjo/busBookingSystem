@@ -57,3 +57,7 @@ app/Http/Middleware/VerifyCsrfToken.php and delete 'api/*'
 DATABASE 
  
  - If you would like to use an already done database to test please go to database folder you will find the .sql file  
+
+DOCKER 
+
+- For Docker we can use Laravel Sail , a light-weight lib to deal with Laravel docker , but it is not implemented in this project 

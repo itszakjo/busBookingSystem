@@ -60,10 +60,12 @@ class BookingsController extends Controller
         )){
 
             $seats =  explode(",",$request->get('seats'));
+
             for($i=0; $i<count($seats)-1;$i++){
 
+                $new_str = str_replace(' ', '', $seats[$i]);
                 if(BookedSeats::create([
-                    'ref_seat'=>$seats[$i]  ,
+                    'ref_seat'=>$new_str  ,
                     'ref_trip'=>$request->get('trip') ,
                     'ref_pickup_point'=>$request->get('pickup_point'),
                     'ref_drop_point'=> $request->get('drop_point')
@@ -75,7 +77,6 @@ class BookingsController extends Controller
                 }
 
             }
-
 
             return redirect()->back();
 

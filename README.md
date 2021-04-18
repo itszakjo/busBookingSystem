@@ -36,6 +36,10 @@ SO basically , we set up stations , and we set up routes by choosing each route 
  - Search for the trip u added , choose book and choose your pickup & drop location & choose your seats then Click Book
  
  To Access Admin area please go to /admin
+
+  email : admin@mail.com
+  Pw : momomomo
+
  To Access the api > /api 
  
  API ENDPOINTS 

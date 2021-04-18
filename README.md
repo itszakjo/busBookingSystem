@@ -39,6 +39,9 @@ SO basically , we set up stations , and we set up routes by choosing each route 
  To Access the api > /api 
  
  API ENDPOINTS 
+
+PS: I have disabled the api authorization so it could be easier for testing , if you would like to enable it again please go to 
+app/Http/Middleware/VerifyCsrfToken.php and delete 'api/*'
  
  - get available seats 
  X-POST your-domain/api/get_seats

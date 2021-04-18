@@ -53,27 +53,52 @@ class SeatsController extends Controller
         $drop_point = $request->get('drop_point');
         $trip_id = $request->get('trip_id');
 
-        $seats = Seats::get();
+        $seatsCollection = Seats::get();
         $output = "";
 
 
-        foreach($seats->chunk(4) as $seat) {
+        foreach($seatsCollection->chunk(4) as $seats) {
 
             $output .= ' <div class="seatRow">';
 
-            foreach ($seat as $row) {
-
-                $checkSeatAvailability = DB::table('booked_seats')
-                    ->where([
-                        ['ref_seat', $row->name],
-                        ['ref_trip', $trip_id],
-                        ['ref_pickup_point', $pickup_point],
-                        ['ref_drop_point', $drop_point],
-                    ])->first();
+            foreach ($seats as $row) {
 
                 $output .= '<div style="margin:2px;cursor:pointer" id="'.$row->name.'" title="" role="checkbox" aria-checked="false" focusable="true" tabindex="-1" class="seatNumber';
 
-                if($checkSeatAvailability !=null){ $output .=" seatUnavailable";}
+                // get all booked routes for this seat on this trip
+                $seatRoutes = DB::table('booked_seats')
+                    ->where([
+                        ['ref_seat', $row->name],
+                        ['ref_trip', $trip_id],
+                    ])->get();
+
+                //if the seat is booked in any route for this trip
+                if($seatRoutes->count()>0){
+
+                    // loop through the routes
+                   foreach ($seatRoutes as $seatRoute){
+
+                       $start_point = $seatRoute->ref_pickup_point; // 4
+                       $end_point = $seatRoute->ref_drop_point; // 7
+
+                       if(($pickup_point < $start_point && $pickup_point < $end_point &&
+                           $drop_point <= $start_point && $drop_point < $end_point) ||
+                            ($pickup_point > $start_point && $pickup_point >= $end_point &&
+                            $drop_point > $start_point && $drop_point > $end_point)){
+
+                           $output .=" available";
+
+                    }else{
+
+
+                        $output .=" seatUnavailable";
+
+                    }
+
+
+                   }
+
+                }
 
                 $output .='">'.$row->name.'</div>';
             }

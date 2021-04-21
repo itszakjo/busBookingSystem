@@ -30,6 +30,11 @@ class BookingsController extends Controller
         $pickup_point = $request->input('pickup_point');
         $drop_point = $request->input('drop_point');
 
+        $request->validate([
+            'pickup_point' => 'required|integer',
+            'drop_point' => 'required|integer',
+        ]);
+
         $response  = $tripsServices->getTripAvailableSeatsForAPI($pickup_point,$drop_point);
 
         return $response;
@@ -61,6 +66,13 @@ class BookingsController extends Controller
         $drop_point = $request->get('drop_point');
         $seats = $request->get('seats');
         $total_price =  $request->get('total_price');
+
+        $request->validate([
+            'trip' => 'required|integer',
+            'total_price' => 'required|numeric',
+            'pickup_point' => 'required|integer',
+            'drop_point' => 'required|integer',
+        ]);
 
         $response  = $tripsService->bookTrip($name, $trip , $pickup_point, $drop_point , $seats , $total_price);
 

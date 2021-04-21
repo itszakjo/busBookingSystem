@@ -54,6 +54,15 @@ class BookingsController extends Controller
         $seats = $request->get('seats');
         $total_price =  $request->get('total_price');
 
+
+        $request->validate([
+            'trip' => 'required|integer',
+            'total_price' => 'required|numeric',
+            'pickup_point' => 'required|integer',
+            'drop_point' => 'required|integer',
+        ]);
+
+
         $response  = $tripsService->bookTrip($name, $trip , $pickup_point, $drop_point , $seats , $total_price);
 
         if($response->getData()->status == 200){

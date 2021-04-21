@@ -53,6 +53,12 @@ class SeatsController extends Controller
         $drop_point = $request->get('drop_point');
         $trip_id = $request->get('trip_id');
 
+        $request->validate([
+            'trip_id' => 'required|integer',
+            'pickup_point' => 'required|integer',
+            'drop_point' => 'required|integer',
+        ]);
+
         $data = $tripsServices->getTripAvailableSeatsForWeb($pickup_point, $drop_point, $trip_id);
 
         echo $data;

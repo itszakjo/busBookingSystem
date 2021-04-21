@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Web;
 
 use App\Models\Stations;
 use App\Models\Trips;
+use App\Services\TripsServices;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -32,17 +33,11 @@ class HomeController extends Controller
         return view('web.welcome' , compact('stations'));
     }
 
-    public function searchTrips(Request $request){
+    public function searchTrips(Request $request , TripsServices $trips){
 
-        $start_point = $request->get('start_point');
-        $end_point = $request->get('end_point');
-        $date = $request->get('date');
-
-        $data = Trips::select('trips.*' , 'routes.start_point', 'routes.end_point','routes.stop_points')
-            ->join('routes','trips.route','=','routes.id')
-            ->where('routes.start_point' , $start_point)
-            ->where('routes.end_point' , $end_point)
-            ->get();
+        $data = $trips->search($request->get('start_point') ,
+                            $request->get('end_point') ,
+                            $request->get('date'));
 
         $output = "";
 

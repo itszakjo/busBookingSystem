@@ -234,6 +234,7 @@
 
                 success: function (data) {
 
+                    // alert(data)
                     $('.seatsChart').html(data)
                 }
 
@@ -259,6 +260,7 @@
                 },
 
                 success: function (data) {
+                    // alert(data)
 
                     $('.seatsChart').html(data)
                 }

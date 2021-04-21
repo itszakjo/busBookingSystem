@@ -7,6 +7,7 @@ use App\Models\BookedSeats;
 use App\Models\Bookings;
 use App\Models\Seats;
 use App\Models\Trips;
+use App\Services\TripsServices;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -17,7 +18,7 @@ class BookingsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index(Request $request, TripsServices $tripsServices)
     {
 
         // here we don't create new seats for each trip , instead , we have fixed number of seats ,
@@ -27,26 +28,10 @@ class BookingsController extends Controller
 
         $pickup_point = $request->input('pickup_point');
         $drop_point = $request->input('drop_point');
-        $seats = Seats::get();
 
-        foreach ($seats as $row) {
+        $response  = $tripsServices->getTripAvailableSeatsForAPI($pickup_point,$drop_point);
 
-
-            $checkSeat = BookedSeats::where('ref_drop_point' ,$drop_point )
-                ->where('ref_pickup_point' ,  $pickup_point)
-                ->where('ref_seat' ,$row->name)
-                ->first();
-
-            // if the seat is not booked , add it
-                if($checkSeat == null){
-                    $data[] =[
-                        'id' => $row->id,
-                        'name' => $row->name,
-                    ];
-                }
-            }
-
-        return response()->json(['status' => 200, 'data' => $data]);
+        return $response;
 
     }
 
@@ -66,46 +51,20 @@ class BookingsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request , TripsServices $tripsService)
     {
 
-        if(Bookings::create(
-            [
-                'name' => $request->input('name') ,
-                'trip' => $request->input('trip') ,
-                'pickup_point' => $request->input('pickup_point') ,
-                'drop_point' => $request->input('drop_point') ,
-                'seats' => $request->input('seats') ,
-                'booking_date' => Carbon::today()->toDateString(),
-                'total_price' => $request->input('total_price') ,
+        $name=  $request->get('name') ;
+        $trip =  $request->get('trip');
+        $pickup_point = $request->get('pickup_point');
+        $drop_point = $request->get('drop_point');
+        $seats = $request->get('seats');
+        $total_price =  $request->get('total_price');
 
-            ]
-        )){
+        $response  = $tripsService->bookTrip($name, $trip , $pickup_point, $drop_point , $seats , $total_price);
 
-            $seats =  explode(",",$request->input('seats'));
-            for($i=0; $i<count($seats)-1;$i++){
+        return $response;
 
-                if(BookedSeats::create([
-                    'ref_seat'=>$seats[$i]  ,
-                    'ref_trip'=>$request->input('trip') ,
-                    'ref_pickup_point'=>$request->input('pickup_point'),
-                    'ref_drop_point'=> $request->input('drop_point')
-                ])){
-
-                }else{
-
-                    return response()->json(['status' => 400 , 'message' => 'Error']);
-                }
-
-            }
-
-            return response()->json(['status' => 200 , 'message' => 'Booked Successfully !']);
-
-
-        }else{
-
-            return response()->json(['status' => 400 , 'message' => 'Error !']);
-        }
 
     }
 

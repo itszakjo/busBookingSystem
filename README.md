@@ -2,10 +2,20 @@
 ## About This Project 
 
 This is a simple Bus Booking System using laravel 8 & mySQL and API sat up, 
+users can book a specific seat for a specific trip and specific route with start & end point.
 
-users can book a specific seat for a specific trip with start & end point 
+ 
 
-what admin can do ? 
+
+##### Updates 
+
+- Fixing bugs 
+- Taking the project into higher level by refactoring the whole project to be using Service Container.
+
+
+
+
+What can admin do ? 
 
 - Add/Edit/Delete stations 
 - Add/Edit/Delete routes 
@@ -24,6 +34,10 @@ SO basically , we set up stations , and we set up routes by choosing each route 
  
  TO TEST THIS APP 
  
+ Choose Cairo as from & Asyut as to then click Find 
+ 
+ if you would like to test from scratch
+ 
  - Add stations
  - Add Routes
  - Add Trips 
@@ -32,9 +46,19 @@ SO basically , we set up stations , and we set up routes by choosing each route 
  - Search for the trip u added , choose book and choose your pickup & drop location & choose your seats then Click Book
  
  To Access Admin area please go to /admin
+
+  E-mail : admin@mail.com
+  
+  Pw : momomomo
+  
+  
+
  To Access the api > /api 
  
- API ENDPOINTS 
+ ##### API ENDPOINTS 
+
+PS: I have disabled the api authorization so it could be easier for testing , if you would like to enable it again please go to 
+app/Http/Middleware/VerifyCsrfToken.php and delete 'api/*'
  
  - get available seats 
  X-POST your-domain/api/get_seats
@@ -47,6 +71,10 @@ SO basically , we set up stations , and we set up routes by choosing each route 
  parameters:name,trip(int),pickup_point(int),drop_point(int),seats(string),total_price(double)
 
 
-DATABASE 
+#####DATABASE 
  
  - If you would like to use an already done database to test please go to database folder you will find the .sql file  
+
+#####DOCKER 
+
+- For Docker we can use Laravel Sail , a light-weight lib to deal with Laravel docker , but it is not implemented in this project 

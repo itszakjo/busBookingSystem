@@ -21,6 +21,7 @@ class BookingsController extends Controller
     public function index(Request $request, TripsServices $tripsServices)
     {
 
+
         // here we don't create new seats for each trip , instead , we have fixed number of seats ,
         // and we only store the booked seat id ,
         // if we would like to retrieve the available seats for a specific route , we simply get the unstored seats

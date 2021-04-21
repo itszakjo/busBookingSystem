@@ -35,6 +35,7 @@ class HomeController extends Controller
 
     public function searchTrips(Request $request , TripsServices $trips){
 
+
         $data = $trips->search($request->get('start_point') ,
                             $request->get('end_point') ,
                             $request->get('date'));

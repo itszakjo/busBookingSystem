@@ -49,7 +49,6 @@ class SeatsController extends Controller
      */
     public function show(Request $request, TripsServices $tripsServices)
     {
-
         $pickup_point = $request->get('pickup_point');
         $drop_point = $request->get('drop_point');
         $trip_id = $request->get('trip_id');

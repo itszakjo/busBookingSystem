@@ -15,6 +15,7 @@ class TripsServices
 
     public function search($start_point, $end_point,$date){
 
+
         return $data = Trips::select('trips.*' , 'routes.start_point', 'routes.end_point','routes.stop_points')
             ->join('routes','trips.route','=','routes.id')
             ->where('routes.start_point' , $start_point)

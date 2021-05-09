@@ -9,6 +9,14 @@ class Bookings extends Model
 {
     use HasFactory;
 
+
+    public static $createRules = [
+        'pickup_point' => 'required|int',
+        'drop_point' => 'required|int',
+        'trip' => 'required|int',
+        'seat_id' => 'required|int',
+    ];
+
     protected $fillable = [
 
         'id',
@@ -16,15 +24,19 @@ class Bookings extends Model
         'trip',
         'pickup_point',
         'drop_point',
-        'seats',
+        'seat_id',
         'booking_date',
         'total_price'
 
     ];
 
 
+    public function seat()
+    {
+        return $this->belongsTo(Seats::class ,'seat_id');
+    }
 
-    public function Trip(){
+    public function trip(){
         return $this->belongsTo(Trips::class , 'trip');
     }
 

@@ -18,7 +18,6 @@ class CreateRoutesTable extends Migration
             $table->string('name');
             $table->integer('start_point');
             $table->integer('end_point');
-            $table->text('stop_points');
             $table->timestamps();
         });
     }

@@ -19,7 +19,7 @@ class CreateBookingsTable extends Migration
             $table->integer('trip');
             $table->integer('pickup_point');
             $table->integer('drop_point');
-            $table->string('seats');
+            $table->string('seat_id');
             $table->date('booking_date');
             $table->float('total_price');
             $table->timestamps();

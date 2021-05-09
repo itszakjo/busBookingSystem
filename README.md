@@ -1,80 +1,87 @@
 
 ## About This Project 
 
-This is a simple Bus Booking System using laravel 8 & mySQL and API sat up, 
+This is a Bus Booking System using laravel 8 & mySQL and API sat up, 
 users can book a specific seat for a specific trip and specific route with start & end point.
 
  
 
 
-##### Updates 
+##### Features 
 
-- Fixing bugs 
-- Taking the project into higher level by refactoring the whole project to be using Service Container.
+- User authentication
+- Stations are added as Cities 
+- Multiple trips between two stations or cities
+- 12 seat for each bus as each trip has a bus
+- You can book a seat for a specific route if the seat is available
+- You can retrieve all available seats to be booked 
+- App handles race condition using database transactions
 
-
-
-
-What can admin do ? 
-
-- Add/Edit/Delete stations 
-- Add/Edit/Delete routes 
-- Add/Edit/Delete trips 
-- View/Delete Bookings 
-
-SO basically , we set up stations , and we set up routes by choosing each route start_point ,end_point & the stop points 
-
-- The user can easily lookup for trips by entering the start & end points , after choosing a trip , the user can easily see and choose available seats , 
-- The app calculates the price per each chosen seat as well > total price
-- The user can also choose their preferred pickup location and drop location 
-
-- Admin can view the booking order (name, booked at, pickup location, drop location, total price)
  
- 
- 
- TO TEST THIS APP 
- 
- Choose Cairo as from & Asyut as to then click Find 
- 
- if you would like to test from scratch
- 
- - Add stations
- - Add Routes
- - Add Trips 
- 
- 
- - Search for the trip u added , choose book and choose your pickup & drop location & choose your seats then Click Book
- 
- To Access Admin area please go to /admin
 
-  E-mail : admin@mail.com
+##Usage/Install
+
+ ```
   
-  Pw : momomomo
-  
-  
+ add mysql credentials to .env
+ ```
+````
+$ composer install
+$ php artisan key:generate
+$ php artisan migrate
+$ php artisan db:seed
+$ php artisan passport:install
+$ php artisan serve
+```` 
 
- To Access the api > /api 
- 
- ##### API ENDPOINTS 
+####For Testing 
 
-PS: I have disabled the api authorization so it could be easier for testing , if you would like to enable it again please go to 
-app/Http/Middleware/VerifyCsrfToken.php and delete 'api/*'
- 
- - get available seats 
- X-POST your-domain/api/get_seats
- 
- parameters: pickup_point , drop_point
- 
- 
- - book a seat 
- X-POST your-domain/api/book_trip
- parameters:name,trip(int),pickup_point(int),drop_point(int),seats(string),total_price(double)
+```
+$ php artisan test
+```
+
+##usage - Auth
+```http
+X-POST /api/register
+
+X-POST /api/login
+```
+| Parameters |  |  |
+| :--- | :--- | :--- |
+| `email` | `string` | `required` | 
+| `password` | `string` | `required` |
+
+```
+{
+ "message" : ""
+  "token" : "TOKEN"
+}
+```
 
 
-#####DATABASE 
+
+####Available Seats:
+```http
+x-POST /api/get_seats
+```
+| Parameter |  |  |
+| :--- | :--- | :--- |
+| `trip_id` | `int` |  `required`|
+| `pickup_point` | `int` | `required` |
+| `drop_point` | `int` | `required` |
+
  
- - If you would like to use an already done database to test please go to database folder you will find the .sql file  
+ 
+ 
+####Book Seat:
+```
+POST /api/book_seat
+```
+- This Route is guarded by Passport and requires `Authorization: Bearer TOKEN`
 
-#####DOCKER 
-
-- For Docker we can use Laravel Sail , a light-weight lib to deal with Laravel docker , but it is not implemented in this project 
+| Parameters |  |  |
+| :--- | :--- | :--- |
+| `trip_id` | `integer` | `required` |
+| `seat_id` | `integer` | `required` |
+| `pickup_point` | `integer` | `required` |
+| `drop_point` | `integer` | `required` |

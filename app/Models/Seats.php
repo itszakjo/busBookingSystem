@@ -12,7 +12,19 @@ class Seats extends Model
     protected $fillable = [
 
         'id',
+        'bus_id',
         'name'
 
     ];
+
+    public function bookings()
+    {
+        return $this->hasMany(Bookings::class , 'seat_id');
+    }
+
+    public function bus()
+    {
+        return $this->belongsTo(Bus::class , 'bus_id');
+    }
+
 }

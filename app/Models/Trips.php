@@ -13,7 +13,8 @@ class Trips extends Model
 
         'id',
         'name',
-        'route',
+        'bus_id',
+        'route_id',
         'date',
         'departure_at',
         'arrival_at' ,
@@ -23,8 +24,19 @@ class Trips extends Model
     ];
 
 
-    public function Route(){
+    public function route(){
 
-        return $this->belongsTo(Routes::class ,'route');
+        return $this->belongsTo(Routes::class ,'route_id');
     }
+
+    public function bus()
+    {
+        return $this->belongsTo(Bus::class, 'bus_id');
+    }
+
+    public function bookings(){
+
+        return $this->hasMany(Bookings::class , 'trip');
+    }
+
 }

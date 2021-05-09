@@ -7,7 +7,7 @@ class TripRepository implements TripRepositoryInterface
 
     public function getTripStations($id)
     {
-        $trips = Trips::with('route.stations')->find(2);
+        $trips = Trips::with('route.stations')->find($id);
         if ($trips != null) {
             $trips->toArray();
         } else {

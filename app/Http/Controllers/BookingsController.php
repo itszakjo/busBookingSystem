@@ -26,6 +26,7 @@ class BookingsController extends Controller
 
         return $tripsService->getTripAvailableSeats($request->trip_id, $request->pickup_point, $request->drop_point);
 
+
     }
 
     /**
@@ -44,15 +45,15 @@ class BookingsController extends Controller
             'drop_point' => 'required|integer',
         ]);
 
-        $reservation = $tripsService->bookSeat($request->seat_id, $request->pickup_point, $request->drop_point, $request->trip_id);
+        $booking = $tripsService->bookSeat($request->seat_id, $request->pickup_point, $request->drop_point, $request->trip_id);
 
-        if ($reservation == null) {
+        if ($booking == null) {
             return response()->json([
                 'error' => 'Seat is not available',
             ], 400);
         }
 
-        return $reservation;
+        return $booking;
 
 
     }

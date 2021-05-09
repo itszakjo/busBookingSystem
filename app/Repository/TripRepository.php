@@ -8,11 +8,11 @@ class TripRepository implements TripRepositoryInterface
     public function getTripStations($id)
     {
         $trips = Trips::with('route.stations')->find(2);
-//        if ($trips != null) {
-//            $trips->toArray();
-//        } else {
-//            $trips = [];
-//        }
+        if ($trips != null) {
+            $trips->toArray();
+        } else {
+            $trips = [];
+        }
 
         return $trips;
     }

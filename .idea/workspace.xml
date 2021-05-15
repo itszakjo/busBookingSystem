@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="aa0740b7-1a6d-4c39-a946-f764fd1648ec" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/TripService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/TripService.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,39 +17,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="BookingsController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BookingsController.php">
+      <file leaf-file-name="TripService.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Services/TripService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="25" selection-start-line="25" selection-end-line="25" />
+            <state relative-caret-position="262">
+              <caret line="203" column="1" lean-forward="true" selection-start-line="203" selection-start-column="1" selection-end-line="203" selection-end-column="1" />
               <folding>
-                <element signature="e#41#70#0#PHP" expanded="true" />
-                <element signature="e#730#889#0#PHP" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SeatResource.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Resources/SeatResource.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="78">
-              <caret line="19" column="17" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
-              <folding>
-                <element signature="e#134#268#0#PHP" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="docker-compose.yml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/docker-compose.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="14" lean-forward="true" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
-              <folding>
-                <element signature="e#612#1116#0" />
-                <element signature="e#2166#2418#0" />
+                <element signature="e#33#54#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -58,9 +33,8 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>There no</find>
-      <find>There are no a</find>
-      <find>Stations no</find>
+      <find />
+      <find />
       <find>bus</find>
       <find>getTripBookedSeats</find>
       <find>getTripBookings</find>
@@ -73,7 +47,7 @@
       <find>book</find>
       <find>bookSe</find>
       <find>Sea</find>
-      <find>Seat was</find>
+      <find />
       <find>checkSeatExistence</find>
       <find>seatAvailablityChecker</find>
       <find>DB</find>
@@ -88,6 +62,7 @@
       <find>StationSeeder</find>
       <find>$trips</find>
       <find>UserRequestValidator</find>
+      <find>laravel</find>
     </findStrings>
     <replaceStrings>
       <replace>Repository</replace>
@@ -132,7 +107,6 @@
         <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
         <option value="$PROJECT_DIR$/database/seeders/BusTableSeeder.php" />
         <option value="$PROJECT_DIR$/database/seeders/StationsSeeder.php" />
-        <option value="$PROJECT_DIR$/app/Services/TripService.php" />
         <option value="$PROJECT_DIR$/database/factories/StationFactory.php" />
         <option value="$PROJECT_DIR$/database/factories/StationsFactory.php" />
         <option value="$PROJECT_DIR$/database/seeders/StationSeeder.php" />
@@ -153,13 +127,14 @@
         <option value="$PROJECT_DIR$/app/Models/User.php" />
         <option value="$PROJECT_DIR$/app/Models/Bookings.php" />
         <option value="$PROJECT_DIR$/app/RequestValidators/BookRequestValidator.php" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/routes/api.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/UserController.php" />
         <option value="$PROJECT_DIR$/app/Repository/TripRepository.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/BookingsController.php" />
         <option value="$PROJECT_DIR$/app/Http/Resources/SeatResource.php" />
         <option value="$PROJECT_DIR$/docker-compose.yml" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/app/Services/TripService.php" />
       </list>
     </option>
   </component>
@@ -306,6 +281,30 @@
               <item name="busBookingSystem" type="b2602c69:ProjectViewProjectNode" />
               <item name="busBookingSystem" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="busBookingSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="busBookingSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="busBookingSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="busBookingSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="busBookingSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="busBookingSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="busBookingSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="busBookingSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Services" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -372,7 +371,8 @@
       <workItem from="1620124883226" duration="5283000" />
       <workItem from="1620211251740" duration="21132000" />
       <workItem from="1620511230311" duration="34834000" />
-      <workItem from="1620571470343" duration="1647000" />
+      <workItem from="1620571470343" duration="3215000" />
+      <workItem from="1621094497133" duration="489000" />
     </task>
     <task id="LOCAL-00001" summary="updating readme">
       <created>1618704234807</created>
@@ -437,11 +437,25 @@
       <option name="project" value="LOCAL" />
       <updated>1620572229796</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="docker">
+      <created>1620573471641</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1620573471641</updated>
+    </task>
+    <task id="LOCAL-00011" summary="docker">
+      <created>1620573897039</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1620573897039</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="151295000" />
+    <option name="totallyTimeSpent" value="153352000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -458,11 +472,11 @@
       <window_info anchor="bottom" x="22" y="263" width="1322" height="202" id="TODO" order="11" type="FLOATING" weight="0.32952693" />
       <window_info anchor="bottom" id="Event Log" order="0" sideWeight="0.50075644" side_tool="true" weight="0.3523654" />
       <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="2" visible="true" weight="0.39967373" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="2" visible="true" weight="0.32300162" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49924356" weight="0.2985318" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23676248" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49924356" weight="0.45350733" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24054463" />
       <window_info anchor="bottom" id="Docker" order="3" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -481,22 +495,22 @@
       <window_info anchor="bottom" id="Docker" order="3" show_stripe_button="false" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="6" />
-      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24886535" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
       <window_info anchor="bottom" x="22" y="263" width="1322" height="202" id="TODO" order="11" type="FLOATING" weight="0.32952693" />
-      <window_info anchor="bottom" id="Find" order="5" />
+      <window_info anchor="bottom" id="Version Control" order="2" weight="0.32952693" />
+      <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49924356" weight="0.30668843" />
       <window_info anchor="bottom" id="Event Log" order="0" sideWeight="0.50075644" side_tool="true" weight="0.3523654" />
-      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
-      <window_info anchor="bottom" id="Version Control" order="2" weight="0.32952693" />
-      <window_info anchor="bottom" id="Message" order="4" />
+      <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="5" />
+      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -512,7 +526,8 @@
     <MESSAGE value="Updating the project to a better structure and representation" />
     <MESSAGE value="removing comments" />
     <MESSAGE value="init commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="init commit" />
+    <MESSAGE value="docker" />
+    <option name="LAST_COMMIT_MESSAGE" value="docker" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -520,13 +535,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Exceptions/InvalidStationsOrderException.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/l5-swagger.php" />
     <entry file="file://$PROJECT_DIR$/config/app.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -598,16 +606,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="118">
           <caret line="34" column="6" lean-forward="true" selection-start-line="34" selection-start-column="6" selection-end-line="34" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Services/TripService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="147" lean-forward="true" selection-start-line="147" selection-end-line="147" />
-          <folding>
-            <element signature="e#33#54#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -778,16 +776,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="100">
-            <caret line="40" column="3" lean-forward="true" selection-start-line="40" selection-start-column="3" selection-end-line="40" selection-end-column="3" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/api.php">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -816,34 +804,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BookingsController.php">
+    <entry file="file://$PROJECT_DIR$/vendor/bin/sail">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
-          <folding>
-            <element signature="e#41#70#0#PHP" expanded="true" />
-            <element signature="e#730#889#0#PHP" />
-          </folding>
+        <state relative-caret-position="170">
+          <caret line="10" column="2" lean-forward="true" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Resources/SeatResource.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="19" column="17" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
-          <folding>
-            <element signature="e#134#268#0#PHP" />
-          </folding>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="91">
+            <caret line="78" lean-forward="true" selection-start-line="78" selection-end-line="78" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/docker-compose.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="14" lean-forward="true" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
+        <state relative-caret-position="228">
+          <caret line="15" column="16" lean-forward="true" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Resources/SeatResource.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="19" column="17" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BookingsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Services/TripService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="203" column="1" lean-forward="true" selection-start-line="203" selection-start-column="1" selection-end-line="203" selection-end-column="1" />
           <folding>
-            <element signature="e#612#1116#0" />
-            <element signature="e#2166#2418#0" />
+            <element signature="e#33#54#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

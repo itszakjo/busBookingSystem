@@ -165,27 +165,40 @@ class TripService implements TripServiceInterface
     {
 
         // using database transactions to avoid race condition
+        DB::beginTransaction();
+
         try {
-            DB::beginTransaction();
 
-            if (!$this->checkSeatExistence($seat_id, $pickup_point, $drop_point, $trip_id)) {
-              abort('404' , 'Seat is not Available');
-            }
-
-            sleep(5);
-
-            $booking =  $this->bookingRepository->book($seat_id,$pickup_point, $drop_point, $trip_id);
-
-            DB::commit();
-
-            return $booking;
+            $this->commitTransaction($seat_id, $pickup_point, $drop_point, $trip_id);
 
         } catch (\Exception $e) {
-            DB::rollBack();
 
-            return $e;
+            $this->rollBackTransaction($e);
+
         }
 
+    }
+
+    private function commitTransaction($seat_id, $pickup_point, $drop_point, $trip_id)
+    {
+        if (!$this->checkSeatExistence($seat_id, $pickup_point, $drop_point, $trip_id)) {
+            abort('404' , 'Seat is not Available');
+        }
+
+        sleep(5);
+
+        $booking =  $this->bookingRepository->book($seat_id,$pickup_point, $drop_point, $trip_id);
+
+        DB::commit();
+
+        return $booking;
+    }
+
+    private function rollBackTransaction($e)
+    {
+        DB::rollBack();
+
+        return $e;
     }
 
 }
